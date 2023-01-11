@@ -1,0 +1,19 @@
+apiVersion: v1
+
+kind: Service
+
+metadata:
+  name: planetarium-clusterip
+  labels:
+    app: clusterip
+
+spec:
+  type: ClusterIP
+  selector:
+    app: planetarium-pod # this is targeting to the template in deployment
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+

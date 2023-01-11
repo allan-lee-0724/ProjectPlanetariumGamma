@@ -1,0 +1,20 @@
+prometheus:
+  prometheusSpec:
+    serviceMonitorSelector:
+      matchLabels:
+        app: english-greeter
+
+
+grafana:
+    namespaceOverride: "default"
+    grafana.ini:
+      server:
+        serve_from_sub_path: "true"
+        root_url: "%(protocol)s://%(domain)s:/grafana/" 
+
+    ingress:
+      enabled: true
+      path: /grafana
+      ingressClassName: nginx
+
+

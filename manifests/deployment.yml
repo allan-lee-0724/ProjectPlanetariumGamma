@@ -1,0 +1,44 @@
+apiVersion: v1
+
+kind: Deployment
+
+metadata:
+  name: planetarium-deployment
+  labels:
+    app: deployment
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: planetarium-pod # THIS LABEL SHOULD MATCH WITH THE POD LABEL DOWN BELOW
+  template:
+    metadata:
+      labels:
+        app: planetarium-pod
+    spec:
+      containers:
+        - name: app
+          image: allanlee0724/planetariumbeta:rolling
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - mountPath: /logs
+              name: logs
+
+        - name: promtail
+          image: grafana/promtail
+          args:
+            - -config.file=/etc/promtail/promtail.yml
+          volumeMounts:
+            - name: logs
+              mountPath: /logs
+            - name: promtail-config
+              mountPath: /etc/promtail
+
+      volumes:
+        - name: logs
+        - name: promtail-config
+          configMap:
+            name: promtail-config
