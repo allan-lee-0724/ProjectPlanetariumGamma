@@ -27,15 +27,15 @@ spec:
             - mountPath: /logs
               name: logs
 
-        - name: promtail-container
-          image: grafana/promtail
-          args:
-            - -config.file=/etc/promtail/promtail.yml
-          volumeMounts:
-            - name: logs
-              mountPath: /logs
-            - name: promtail-config
-              mountPath: /etc/promtail
+        # - name: promtail-container
+        #   image: grafana/promtail
+        #   args:
+        #     - -config.file=/etc/promtail/promtail.yml
+        #   volumeMounts:
+        #     - name: logs
+        #       mountPath: /logs
+        #     - name: promtail-config
+        #       mountPath: /etc/promtail
 
       # volumes:
       #   - name: logs
