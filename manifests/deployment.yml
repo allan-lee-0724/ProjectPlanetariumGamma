@@ -23,9 +23,9 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
-          volumeMounts:
-            - mountPath: /logs
-              name: logs
+          # volumeMounts:
+          #   - mountPath: /logs
+          #     name: logs
 
         # - name: promtail-container
         #   image: grafana/promtail
