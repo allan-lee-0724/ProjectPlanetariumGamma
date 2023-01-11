@@ -1,26 +1,26 @@
-apiVersion: apps/v1
+apiVersion: "apps/v1"
 
-kind: Deployment
+kind: "Deployment"
 
 metadata:
-  name: planetarium-deployment
+  name: "planetarium-deployment"
   labels:
-    app: planetarium
+    app: "planetarium"
 
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: planetarium # THIS LABEL SHOULD MATCH WITH THE POD LABEL DOWN BELOW
+      app: "planetarium" # THIS LABEL SHOULD MATCH WITH THE POD LABEL DOWN BELOW
   template:
     metadata:
       labels:
-        app: planetarium
+        app: "planetarium"
     spec:
       containers:
-        - name: planetarium
-          image: allanlee0724/planetariumbeta:rolling
-          imagePullPolicy: Always
+        - name: "planetarium"
+          image: "allanlee0724/planetariumbeta:rolling"
+          imagePullPolicy: "Always"
           ports:
             - containerPort: 8080
           # volumeMounts:
