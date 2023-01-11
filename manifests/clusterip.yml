@@ -5,12 +5,12 @@ kind: Service
 metadata:
   name: planetarium-clusterip
   labels:
-    app: clusterip
+    app: planetarium
 
 spec:
   type: ClusterIP
   selector:
-    app: planetarium-pod # this is targeting to the template in deployment
+    app: planetarium # this is targeting to the template in deployment
   ports:
     - name: http
       protocol: TCP

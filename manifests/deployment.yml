@@ -5,17 +5,17 @@ kind: Deployment
 metadata:
   name: planetarium-deployment
   labels:
-    app: deployment
+    app: planetarium
 
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: planetarium-pod # THIS LABEL SHOULD MATCH WITH THE POD LABEL DOWN BELOW
+      app: planetarium # THIS LABEL SHOULD MATCH WITH THE POD LABEL DOWN BELOW
   template:
     metadata:
       labels:
-        app: planetarium-pod
+        app: planetarium
     spec:
       containers:
         - name: app
@@ -27,7 +27,7 @@ spec:
             - mountPath: /logs
               name: logs
 
-        - name: promtail
+        - name: promtail-container
           image: grafana/promtail
           args:
             - -config.file=/etc/promtail/promtail.yml

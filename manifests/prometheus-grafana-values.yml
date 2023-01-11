@@ -2,7 +2,7 @@ prometheus:
   prometheusSpec:
     serviceMonitorSelector:
       matchLabels:
-        app: service-monitor
+        app: planetarium
 
 
 grafana:

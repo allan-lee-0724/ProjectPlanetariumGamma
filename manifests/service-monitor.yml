@@ -3,15 +3,15 @@ apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 
 metadata:
-  name: service-monitor
+  name: planetarium-service-monitor
   labels:
-    app: service-monitor
+    app: planetarium
 
 spec:
   jobLabel: app
   selector:
     matchLabels:
-      app: planetarium-clusterip
+      app: planetarium
   endpoints:
     - port: http
       path: /actuator/prometheus
