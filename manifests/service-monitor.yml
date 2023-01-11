@@ -8,7 +8,7 @@ metadata:
     app: planetarium
 
 spec:
-  jobLabel: app
+  jobLabel: planetarium-app
   selector:
     matchLabels:
       app: planetarium
