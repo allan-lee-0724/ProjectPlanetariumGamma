@@ -2,7 +2,7 @@ prometheus:
   prometheusSpec:
     serviceMonitorSelector:
       matchLabels:
-        app: english-greeter
+        app: service-monitor
 
 
 grafana:
