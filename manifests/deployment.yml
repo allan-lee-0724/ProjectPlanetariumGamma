@@ -37,8 +37,8 @@ spec:
             - name: promtail-config
               mountPath: /etc/promtail
 
-      volumes:
-        - name: logs
-        - name: promtail-config
-          configMap:
-            name: promtail-config
+      # volumes:
+      #   - name: logs
+      #   - name: promtail-config
+      #     configMap:
+      #       name: promtail-config
