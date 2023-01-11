@@ -4,6 +4,7 @@ kind: "Deployment"
 
 metadata:
   name: "planetarium-deployment"
+  namespace: "default"
   labels:
     app: "planetarium"
 
