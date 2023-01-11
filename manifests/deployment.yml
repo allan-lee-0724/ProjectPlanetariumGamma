@@ -18,7 +18,7 @@ spec:
         app: planetarium
     spec:
       containers:
-        - name: planetarium-app
+        - name: planetarium
           image: allanlee0724/planetariumbeta:rolling
           imagePullPolicy: Always
           ports:
