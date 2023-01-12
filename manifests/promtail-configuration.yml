@@ -21,6 +21,6 @@ data:
             - localhost
             labels:
               job: app-logs
-              app: planetarium-pod
+              app: planetarium
               __path__: /logs/*.log
               
